@@ -2,6 +2,14 @@
 name = "keychain_cli"
 version = "0.1.0"
 edition = "2021"
+description = "Secure secret management for macOS - Keychain-based credential storage with Hook validation"
+repository = "https://github.com/mason0510/keychain-cli"
+homepage = "https://github.com/mason0510/keychain-cli"
+documentation = "https://github.com/mason0510/keychain-cli#readme"
+license = "MIT"
+authors = ["Mason <mason0510@gmail.com>"]
+keywords = ["keychain", "secrets", "security", "cli", "macos"]
+categories = ["command-line-utilities", "authentication", "development-tools"]
 
 [[bin]]
 name = "keychain-cli"
