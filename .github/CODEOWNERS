@@ -1,0 +1,23 @@
+# Global owners
+* @mason0510
+
+# Rule engine - critical for security
+src/rules/ @mason0510
+
+# Keychain integration - security-critical
+src/keychain/ @mason0510
+
+# Validation - security-critical
+src/commands/validate.rs @mason0510
+
+# Documentation
+*.md @mason0510
+docs/ @mason0510
+
+# CI/CD configuration
+.github/workflows/ @mason0510
+.github/ @mason0510
+
+# Build configuration
+Cargo.toml @mason0510
+Cargo.lock @mason0510
