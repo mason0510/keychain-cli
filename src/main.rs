@@ -12,8 +12,41 @@ use commands::{check, load, setup, validate};
 
 #[derive(Parser)]
 #[command(name = "keychain-cli")]
-#[command(about = "Secure Keychain Management CLI for Claude Code", long_about = None)]
-#[command(version = "0.1.0")]
+#[command(about = "Secure Keychain Management CLI for Claude Code")]
+#[command(long_about =
+r#"Secure secret management for macOS - Store API keys in Keychain with biometric protection.
+
+CORE COMMANDS (Quick Start):
+
+  # 1. Store your secrets
+  keychain-cli setup --env-file ~/.env --force
+
+  # 2. Load secrets to shell
+  eval "$(keychain-cli load --format export)"
+
+FEATURES:
+  • Biometric-protected secret storage
+  • <1 second load time for 61+ secrets
+  • Hook-based command validation blocks dangerous operations
+  • Dynamic rule system (no recompilation needed)
+  • Multiple output formats (bash, json, export)
+
+EXAMPLES:
+  # Verify configuration
+  keychain-cli check --verbose
+
+  # Load specific secrets only
+  keychain-cli load --format bash --keys ANTHROPIC_AUTH_TOKEN,MYSQL_PASSWORD
+
+  # Validate command (for Hook integration)
+  echo "cat .env" | keychain-cli validate
+
+DOCUMENTATION:
+  https://github.com/mason0510/keychain-cli#readme
+
+LICENSE:
+  MIT - See LICENSE file for details"#)]
+#[command(version = "0.2.0")]
 struct Cli {
     #[command(subcommand)]
     command: Commands,
